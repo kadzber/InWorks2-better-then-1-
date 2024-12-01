@@ -23,6 +23,7 @@ def Scrap(i):
             if f"/en/results/{i}/races/" in href:
                 href_split = href.split('/')
                 race_name = href_split[6]
+                race_year = href_split[3]
                 if race_name not in seen:
                     seen.add(race_name)
                     unique_hrefs.append(base_url + href)
