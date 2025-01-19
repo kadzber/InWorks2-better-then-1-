@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Race Results</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-gray-900">
+    <div class="flex items-center justify-center min-h-screen">
+      <div class="relative p-4 w-80">
+        <!-- Input Field -->
+        <input
+          type="text"
+          placeholder="Enter year and round (e.g., '2023 1')"
+          class="w-full border-b-2 border-gray-600 outline-none text-white text-lg py-2 bg-transparent transition-all placeholder-gray-500 focus:border-white focus:font-bold focus:pb-1.5"
+          id="inputField"
+        />
+        <button
+          type="submit"
+          class="w-full mt-6 bg-gray-800 text-white py-3 rounded-lg shadow-lg hover:bg-gray-700 hover:scale-105 hover:shadow-xl active:bg-gray-600 transition-all"
+          onclick="fetchJsonFile()"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+    <div class="output"></div>
+    <!-- Correct script path -->
+    <script src="Untitled-1.js"></script>
+  </body>
+</html>
