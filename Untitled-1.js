@@ -48,12 +48,24 @@ async function fetchJsonFile() {
     const ObjectLenght = Object.keys(driver).length;
 
     for (let i = 0; i < ObjectLenght; i++) {
-      console.log(driver[i].DriverNum);
-      console.log(driver[i].Laps);
-      console.log(driver[i].Pos);
-      console.log(driver[i].TimeToLeader);
-      console.log(driver[i].Driver);
-      console.log("-------------------");
+      var DriverNum = driver[i].DriverNum;
+      var Laps = driver[i].Laps;
+      var Pos = driver[i].Pos;
+      var TimeToLeader = driver[i].TimeToLeader;
+      var Driver = driver[i].Driver;
+
+      const body = document.querySelector("tbody");
+      let tags = "";
+
+      driver.map((d) => {
+        tags += `<tr>
+        <td>  ${d.Pos}     </td>
+        <td>  ${d.DriverNum}     </td>
+        <td>  ${d.Driver}     </td>                
+        <td>  ${d.TimeToLeader}      </td>     
+        <td>  ${d.Laps}     </td>`;
+      });
+      body.innerHTML = tags;
     }
 
     console.log(race);
