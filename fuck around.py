@@ -48,12 +48,14 @@ def extract_race_results(url):
             cols = row.find_all("td")
             if len(cols) > 0:
                 result = {
-                   "DriverNum": cols[0].text.strip(),  
-                   "Laps": cols[1].text.strip(),    
-                   "Pos": cols[2].text.strip(),      
-                   "TTL": cols[3].text.strip(),      
-                   "Driver": cols[4].text.strip(),      
-                   "Constructor": cols[5].text.strip()     
+                "Pos": cols[0].text.strip(),  
+                "Driver": cols[2].text.strip(), 
+                "DriverNum": cols[1].text.strip(),  
+                "Constructor": cols[3].text.strip(),  
+                "Laps": cols[4].text.strip(),                           
+                "TimeToLeader": cols[5].text.strip()     
+                        
+                      
                 }
                 race_results.append(result)
         
@@ -92,3 +94,5 @@ data = more_fucking_aroud()
 
 with open("race_results.json", "w") as f:
     json.dump(data, f, indent=4)
+
+
